@@ -26,7 +26,7 @@ class Budget:
 
     def max_expense(self):
     if not self.expenses:
-        print("지출 내역이 없습니다.\n")
+        print("지출 내역이 없습니다\n")
         return
 
     max_e = max(self.expenses, key=lambda e: e.amount)
