@@ -40,6 +40,15 @@ class Budget:
             print(f"{category}: {total}원")
         print()
 
+   def max_expense(self):
+    if not self.expenses:
+        print("지출 내역이 없습니다.\n")
+        return
+
+    max_e = max(self.expenses, key=lambda e: e.amount)
+    print(f"\n최대 지출 항목: [{max_e.date}] {max_e.category} - {max_e.description}: {max_e.amount}원\n")
+
+
 
 
 
