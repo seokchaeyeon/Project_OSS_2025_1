@@ -15,12 +15,12 @@ class Calculator:
 
         # 버튼 생성
         buttons = [
-            ['7', '8', '9', '/'],
-            ['4', '5', '6', '*'],
-            ['1', '2', '3', '-'],
-            ['0', '.', 'C', '+'],
-            ['=']
-        ]
+    ['(', ')', 'C', '/'],
+    ['7', '8', '9', '*'],
+    ['4', '5', '6', '-'],
+    ['1', '2', '3', '+'],
+    ['0', '.', '←', '=']
+]
 
         for row in buttons:
             frame = tk.Frame(root)
@@ -37,6 +37,8 @@ class Calculator:
     def on_click(self, char):
         if char == 'C':
             self.expression = ""
+        elif char == '←':
+        self.expression = self.expression[:-1]
         elif char == '=':
             try:
                 self.expression = str(eval(self.expression))
