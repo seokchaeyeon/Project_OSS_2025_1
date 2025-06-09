@@ -6,11 +6,13 @@ class Budget:
         self.expenses = []
 
     def add_expense(self, category, description, amount):
+        if amount > 1000000:
+            print("경고: 비정상적으로 큰 금액입니다. 입력을 확인하세요.")
+    
         today = datetime.date.today().isoformat()
         expense = Expense(today, category, description, amount)
         self.expenses.append(expense)
         print("지출이 추가되었습니다.\n")
-
     def list_expenses(self):
         if not self.expenses:
             print("지출 내역이 없습니다.\n")
